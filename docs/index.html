@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS238: Intro to Generative AI</title>
+<meta name="description" content="CS238 at Walla Walla University: a ten-week, hands-on introduction to generative AI using locally run open models. Fall 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e4f'/%3E%3Ccircle cx='10' cy='16' r='3' fill='%23fff'/%3E%3Ccircle cx='22' cy='10' r='3' fill='%23fff'/%3E%3Ccircle cx='22' cy='22' r='3' fill='%23fff'/%3E%3Cpath d='M12 15l8-4M12 17l8 4' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header class="topbar">
+  <nav class="nav" aria-label="Sections">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>CS238</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#logistics">Logistics</a></li>
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#policies">Policies</a></li>
+    </ul>
+    <button class="theme" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="sun" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle class="sun" cx="12" cy="12" r="4"/><path class="moon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">CS238 · Fall 2026 · Walla Walla University</p>
+    <h1>Intro to <span class="accent">Generative AI</span></h1>
+    <p class="lede">A ten-week, hands-on introduction to how language models work and what to build with them, taught on open models running on your own laptop. No coding or math background required.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/abuach/genai-course-public">Course repository on GitHub</a>
+      <a class="btn" href="#schedule">See the schedule</a>
+    </div>
+  </div>
+  <svg class="hero-art" viewBox="0 0 320 240" aria-hidden="true">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".9"/><stop offset="1" stop-color="var(--accent-2)" stop-opacity=".9"/></linearGradient></defs>
+    <g class="art-links" stroke="url(#g)" stroke-width="1.5" fill="none" opacity=".55">
+      <path d="M40 200 C 90 120, 130 120, 160 60"/><path d="M40 200 C 100 170, 170 170, 230 120"/><path d="M40 200 C 120 210, 220 210, 280 180"/>
+      <path d="M160 60 C 200 70, 220 90, 230 120"/><path d="M230 120 C 250 150, 270 160, 280 180"/><path d="M160 60 C 120 100, 100 150, 110 190"/><path d="M280 180 C 230 215, 160 215, 110 190"/>
+    </g>
+    <g class="art-nodes" fill="var(--accent)">
+      <circle cx="40" cy="200" r="9"/><circle cx="160" cy="60" r="12"/><circle cx="230" cy="120" r="8"/><circle cx="280" cy="180" r="10"/><circle cx="110" cy="190" r="6"/>
+    </g>
+    <g class="art-tokens" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">
+      <text x="18" y="226">the</text><text x="140" y="44">model</text><text x="240" y="106">predicts</text><text x="262" y="206">next</text><text x="96" y="214">token</text>
+    </g>
+  </svg>
+</section>
+
+<section class="facts" aria-label="Key facts">
+  <div><span class="k">Meets</span><span class="v">Tue &amp; Thu, 1:00–1:50 pm</span></div>
+  <div><span class="k">Quarter</span><span class="v">Sep 28 – Dec 11, 2026</span></div>
+  <div><span class="k">Office hours</span><span class="v">Mon &amp; Thu, 2:00–3:00 pm, KRH 329</span></div>
+  <div><span class="k">Instructor</span><span class="v">Chiké Abuah</span></div>
+</section>
+
+<section id="about" class="section">
+  <h2>About the course</h2>
+  <div class="prose two-col">
+    <p>Generative AI is a productivity tool, and this course treats it as one: you'll learn what a language model is actually doing when it answers, then use that understanding to prompt well, ground a model in your own documents, give it tools, read its reasoning, and measure when it's right. Every technique is taught on open models running locally through <a href="https://ollama.com">Ollama</a>, so everything you build runs on your machine with no account and no key, and everything you learn transfers to any model's API.</p>
+    <p>The course follows the instructor's textbook, <em>Illustrating Generative AI</em>, chapter by chapter, with a lab each week and a quarter-long project of your own choosing: a tool for a field you care about, built one milestone at a time. Students from every major are welcome, and no coding is needed: you start from a working tool and make it yours by writing instructions, examples, and tests and by adding your own sources, and the job that's left is the one no computer can do, knowing your field and checking the work.</p>
+  </div>
+  <ul class="pillars">
+    <li><strong>Local first.</strong> Ten weeks on models you run yourself, from a one-billion-parameter model on a laptop to the class server for heavier work.</li>
+    <li><strong>Evidence over adjectives.</strong> Every project ships with an evaluation set, a benchmark, and a red-team log. Claims match numbers.</li>
+    <li><strong>Build with anything, run on Ollama.</strong> Any AI assistant may write your code; the generative features inside your project run on local models.</li>
+  </ul>
+</section>
+
+<section id="logistics" class="section">
+  <h2>Logistics</h2>
+  <div class="cards">
+    <div class="card"><h3>When and where</h3><p>Tuesdays and Thursdays, 1:00–1:50 pm, in KRH 327, fall quarter 2026 (September 28 to December 11). No class on Thanksgiving, November 26.</p></div>
+    <div class="card"><h3>Instructor</h3><p>Chiké Abuah · <a href="mailto:chike.abuah@wallawalla.edu">chike.abuah@wallawalla.edu</a><br>Office hours Mondays and Thursdays, 2:00–3:00 pm, in KRH 329. Email any time; I'm open to feedback about the course at any point.</p></div>
+    <div class="card"><h3>What you need</h3><p>A laptop that can run <a href="https://ollama.com">Ollama</a> (8 GB of RAM is workable; 16 GB is comfortable), Python with <a href="https://docs.astral.sh/uv/">uv</a>, and a GitHub account. Week 1's lab walks through setup. For heavier models, a shared class server is available under the <a href="https://github.com/abuach/genai-course-public/blob/main/resources/ollama-server-guidelines.md">server guidelines</a>.</p></div>
+    <div class="card"><h3>Where things live</h3><p>The project starter kit, guides, and worked examples are in the <a href="https://github.com/abuach/genai-course-public">public course repository</a>; slides and labs are released week by week. Quizzes, grades, and the textbook are on <a href="https://class.wallawalla.edu/d2l/home/386376">D2L Brightspace</a>. Labs and milestones are submitted by pushing to your own GitHub repository and emailing the link.</p></div>
+  </div>
+</section>
+
+<section id="materials" class="section">
+  <h2>Materials</h2>
+  <div class="cards">
+    <div class="card"><h3>Textbook</h3><p><em>Illustrating Generative AI</em> by Chiké Abuah. The course follows its chapters in order. The book is posted on D2L for enrolled students, one chapter a week as that week's reading (linked from the schedule); each chapter is a runnable notebook, code and real output side by side. The readings are copyrighted and provided for your own use in this course only; please don't share, post, or distribute them.</p></div>
+    <div class="card"><h3>Slides and labs</h3><p>One deck and one lab per week, released as the quarter goes. Labs are written to run on your own Ollama; each ends with reflection questions and a submission checklist.</p></div>
+    <div class="card"><h3>Discussion videos</h3><p>Each week opens with a video chosen to start an argument, on the topic or deliberately off it, with questions to go with it. The list, with lengths and view counts, is released with each week's slides.</p></div>
+    <div class="card"><h3>Tools</h3><p><a href="https://ollama.com">Ollama</a> for local models (the course uses <code>gemma4</code>, <code>qwen2.5-coder</code>, <code>qwen3</code>, <code>deepseek-r1</code>, <code>qwen3-vl</code>, and <code>nomic-embed-text</code>), <a href="https://docs.astral.sh/uv/">uv</a> for Python, and the course's <a href="https://github.com/abuach/genai-course-public/blob/main/util/ollama_client.py">helper module</a> that every lab imports.</p></div>
+  </div>
+</section>
+
+<section id="schedule" class="section">
+  <h2>Schedule</h2>
+  <p class="section-lede">Ten weeks, one topic each. Each week's reading is on D2L. Readings are copyrighted; please don't share them outside the course. Quizzes are on Tuesday mornings on D2L, before class, and cover the previous week's reading, lecture, and lab. Project milestones are due Sunday at 11:59 pm.</p>
+  <div class="table-wrap">
+    <table class="schedule">
+      <thead><tr><th scope="col">Week</th><th scope="col">Dates</th><th scope="col">Topic</th><th scope="col">Materials</th><th scope="col">Project milestone</th><th scope="col">Discuss</th><th scope="col">Quiz (Tue)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-label="Week"><span class="wk">1</span></td>
+          <td data-label="Dates">Sep 29 &amp; Oct 1</td>
+          <td data-label="Topic"><strong>Introduction</strong><br><span class="blurb">What generative AI is, what a language model does, and the tools we'll use all quarter.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 1 is released in class">Lab 1</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359570" class="reading">Week 1 reading · D2L</a></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week01-pitch.md">M1: Pick Your Path</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=Sqa8Zo2XWc4">John Oliver on AI</a></td>
+          <td data-label="Quiz (Tue)"><span class="muted">none</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">2</span></td>
+          <td data-label="Dates">Oct 6 &amp; Oct 8</td>
+          <td data-label="Topic"><strong>Prompting</strong><br><span class="blurb">Zero-shot, few-shot, system prompts, chain of thought, and structured output.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 2 is released in class">Lab 2</span> · <span class="lab-off" aria-disabled="true" title="The week 2 reading is posted on D2L that week">Week 2 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week02-prompts.md">M2: Teach It Your Job</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=VRjgNgJms3Q">ChatGPT made me delusional</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 1</span> <span class="muted">Oct 6</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">3</span></td>
+          <td data-label="Dates">Oct 13 &amp; Oct 15</td>
+          <td data-label="Topic"><strong>Tokens &amp; Attention</strong><br><span class="blurb">How text becomes numbers, and how attention decides what matters.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 3 is released in class">Lab 3</span> · <span class="lab-off" aria-disabled="true" title="The week 3 reading is posted on D2L that week">Week 3 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week03-sources.md">M3: Gather Your Sources</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=wjZofJX0v4M">3Blue1Brown, Transformers</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 2</span> <span class="muted">Oct 13</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">4</span></td>
+          <td data-label="Dates">Oct 20 &amp; Oct 22</td>
+          <td data-label="Topic"><strong>Metacoding</strong><br><span class="blurb">Generative AI as a coding collaborator: generate, test, explain, review.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 4 is released in class">Lab 4</span> · <span class="lab-off" aria-disabled="true" title="The week 4 reading is posted on D2L that week">Week 4 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week04-models.md">M4: Promises and Specialty Models</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=tYhgWRJeYzs">What is vibe coding?</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 3</span> <span class="muted">Oct 20</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">5</span></td>
+          <td data-label="Dates">Oct 27 &amp; Oct 29</td>
+          <td data-label="Topic"><strong>Augmentation</strong><br><span class="blurb">Embeddings, semantic search, and retrieval-augmented generation.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 5 is released in class">Lab 5</span> · <span class="lab-off" aria-disabled="true" title="The week 5 reading is posted on D2L that week">Week 5 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week05-ground.md">M5: Ground It in Your Sources</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=oqSYljRYDEM">LegalEagle on fake cases</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 4</span> <span class="muted">Oct 27</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">6</span></td>
+          <td data-label="Dates">Nov 3 &amp; Nov 5</td>
+          <td data-label="Topic"><strong>Agentic</strong><br><span class="blurb">Tool calling and multi-agent orchestration: giving a model hands.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 6 is released in class">Lab 6</span> · <span class="lab-off" aria-disabled="true" title="The week 6 reading is posted on D2L that week">Week 6 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week06-hands.md">M6: Give It Hands</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=EtNagNezo8w">Two AI agents on a call</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 5</span> <span class="muted">Nov 3</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">7</span></td>
+          <td data-label="Dates">Nov 10 &amp; Nov 12</td>
+          <td data-label="Topic"><strong>Thinking</strong><br><span class="blurb">Reasoning models, what a thinking trace is, and when it's worth the wait.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 7 is released in class">Lab 7</span> · <span class="lab-off" aria-disabled="true" title="The week 7 reading is posted on D2L that week">Week 7 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week07-audit.md">M7: The Audit</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=z2TH5ietCZQ">LLMs Cannot Reason</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 6</span> <span class="muted">Nov 10</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">8</span></td>
+          <td data-label="Dates">Nov 17 &amp; Nov 19</td>
+          <td data-label="Topic"><strong>Multimodal</strong><br><span class="blurb">Vision-language models and prompting for images.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 8 is released in class">Lab 8</span> · <span class="lab-off" aria-disabled="true" title="The week 8 reading is posted on D2L that week">Week 8 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week08-interface.md">M8: Make It Usable, and Let It See</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=3YNku5FKWjw">John Oliver on AI images</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 7</span> <span class="muted">Nov 17</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">9</span></td>
+          <td data-label="Dates">Nov 24 only <span class="flag" title="Thanksgiving, Nov 26">no Thu class</span></td>
+          <td data-label="Topic"><strong>Efficiency</strong><br><span class="blurb">Where the time goes in a model call, and how to pick a model size.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 9 is released in class">Lab 9</span> · <span class="lab-off" aria-disabled="true" title="The week 9 reading is posted on D2L that week">Week 9 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week09-ship.md">M9: Ship It</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=H_c6MWk7PQc">Hank Green on AI water use</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 8</span> <span class="muted">Nov 24</span></td>
+        </tr>
+        <tr>
+          <td data-label="Week"><span class="wk">10</span></td>
+          <td data-label="Dates">Dec 1 &amp; Dec 3</td>
+          <td data-label="Topic"><strong>Responsible AI</strong><br><span class="blurb">Alignment, jailbreaks, faithfulness, and agentic misalignment.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 10 is released in class">Lab 10</span> · <span class="lab-off" aria-disabled="true" title="The week 10 reading is posted on D2L that week">Week 10 reading · D2L</span></td>
+          <td data-label="Project"><a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones/week10-demo.md">M10: Break It, Fix It, Show It</a></td>
+          <td data-label="Discuss"><a href="https://www.youtube.com/watch?v=f9HwA5IR-sg">An AI attempted murder?</a></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 9</span> <span class="muted">Dec 1</span></td>
+        </tr>
+        <tr class="finals">
+          <td data-label="Week"><span class="wk">F</span></td>
+          <td data-label="Dates">Dec 7 – Dec 11</td>
+          <td data-label="Topic"><strong>Finals week</strong><br><span class="blurb">Project report and model card due the Sunday after demo day.</span></td>
+          <td data-label="Materials"><span class="muted">—</span></td>
+          <td data-label="Project"><span class="muted">Demo day is the last class meeting, Thu Dec 3</span></td>
+          <td data-label="Discuss"><span class="muted">—</span></td>
+          <td data-label="Quiz (Tue)"><span class="quiz">Quiz 10</span> <span class="muted">Dec 8</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote">Dates are subject to change; announcements on D2L take precedence. Thanksgiving is Thursday, November 26; week 9 meets on Tuesday only.</p>
+</section>
+
+<section id="project" class="section">
+  <h2>The project</h2>
+  <div class="prose two-col">
+    <p>Over ten weeks, teams of one to three build a generative AI tool for a field they care about, one milestone a week, with each week's lesson becoming that week's change. No coding is needed. Every team picks one of two paths and starts from a working demo: a <strong>Writer</strong>, which turns something into a piece of writing (the demo drafts replies to customer reviews for a small bakery), or a <strong>Reviewer</strong>, which gives feedback on writing (the demo is a writing coach that names each problem with its grammatical term). Teams make it their own by writing instructions, examples, and tests, and by adding their own documents and web pages.</p>
+    <p>Bring your repository and your questions to office hours, and to the end of any class. Milestones 1 to 9 are marked complete, partial, or missing; the week-10 demo and report are graded against a rubric that weighs whether it works, whether the right choices were made, evidence and honesty, communication, and responsible use.</p>
+  </div>
+  <div class="milestones">
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/README.md" class="chip">Project overview</a>
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/milestones" class="chip">Ten milestones</a>
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/rubric.md" class="chip">Rubric</a>
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/ideas.md" class="chip">Idea bank by field</a>
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/guides" class="chip">Guides: customizing, models, sources, testing, presenting</a>
+    <a href="https://github.com/abuach/genai-course-public/blob/main/project/starter" class="chip">The two starter tools</a>
+  </div>
+</section>
+
+<section id="policies" class="section">
+  <h2>Grading and policies</h2>
+  <div class="grades" role="img" aria-label="Grading weights: labs 30 percent, project 30 percent, quizzes 20 percent, attendance 20 percent">
+    <div class="bar"><span style="flex:30" class="g1">Labs 30%</span><span style="flex:30" class="g2">Project 30%</span><span style="flex:20" class="g3">Quizzes 20%</span><span style="flex:20" class="g4">Attendance 20%</span></div>
+  </div>
+  <div class="policy-grid">
+    <div><h3>Labs</h3><p>One per week, done in class and finished on your own, submitted by pushing to your <code>cs238</code> GitHub repository and emailing the link. Reflection questions are answered in your own words, without a model.</p></div>
+    <div><h3>Quizzes</h3><p>Ten short quizzes on D2L, Tuesday mornings before class, covering the previous week's lecture and lab. Ten auto-graded questions each, one attempt, fifteen minutes.</p></div>
+    <div><h3>Project</h3><p>Weekly milestones, a live demo on the last class meeting, and a report. Everyone on a team receives the same milestone marks; the final grade can be adjusted for individual contribution, which the journal records.</p></div>
+    <div><h3>Attendance</h3><p>Class meets twice a week and much of the work happens there. Attendance counts for a fifth of the grade; let me know ahead of time when you have to miss.</p></div>
+    <div><h3>Late work</h3><p>Late work <em>may</em> be accepted, but you <em>must</em> make arrangements with me first. If you need to turn something in late, for any reason, email me <em>before the deadline</em>.</p></div>
+    <div><h3>Using AI</h3><p>This is a course about generative AI, and using it is expected. Two lines don't move: reflection questions and journal entries are yours, written without a model; and every line of code in your repository is yours to explain. Say which assistant you used and what for.</p></div>
+    <div><h3>Collaboration and integrity</h3><p>Collaboration on high-level ideas and approach is encouraged; copying someone else's work is not allowed, and any collaboration must be declared at the top of the submission. Academic misconduct is handled under Walla Walla University's academic integrity policy.</p></div>
+    <div class="span2"><h3>Laptops and phones</h3><p>Lecture days are device-free: laptops closed, phones away, unless an accommodation says otherwise. Lab days are the exception, since the labs are the point of having a laptop. The reason is other people, not you: in a controlled experiment, students who could see a classmate multitasking on a laptop scored lower on the lecture material even though they weren't using one themselves (Sana, Weston, and Cepeda, 2013), and later work found that a peer's inattention spreads to the students around them, lowering their attention, note-taking, and quiz scores, even when the inattentive student sits behind them (Forrin et al., 2021, 2026; Eder, 1982). If you need a device to learn, talk to me and it's fine.</p>
+      <ul class="refs">
+        <li>Sana, F., Weston, T., and Cepeda, N. J. (2013). Laptop multitasking hinders classroom learning for both users and nearby peers. <em>Computers &amp; Education</em>, 62, 24–31. <a href="https://doi.org/10.1016/j.compedu.2012.10.003">doi:10.1016/j.compedu.2012.10.003</a></li>
+        <li>Forrin, N. D., et al. (2021). Attention spreads between students in a learning environment. <em>Journal of Experimental Psychology: Applied</em>.</li>
+        <li>Forrin, N. D., et al. (2026). Investigating attention contagion between students in a lecture hall.</li>
+        <li>Eder, D. (1982). Peer influence on student attentiveness during classroom lessons.</li>
+      </ul></div>
+    <div><h3>Accommodations</h3><p>Students who need accommodations should contact <a href="https://wallawalla.edu/DSS">Disability Support Services</a> (<a href="mailto:DSS@wallawalla.edu">DSS@wallawalla.edu</a>, 509-527-2366) and submit a request in the first two weeks of the quarter. Accommodations aren't retroactive, so let me know early and we'll make arrangements.</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <p>CS238 · Walla Walla University · Fall 2026 · <a href="https://github.com/abuach/genai-course-public">github.com/abuach/genai-course-public</a></p>
+  <p class="muted">Built as a static page; no tracking, no cookies.</p>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
