@@ -104,7 +104,6 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 .schedule { width: 100%; min-width: 900px; border-collapse: collapse; font-size: .95rem; }
 .schedule td[data-label="Quiz (Tue)"], .schedule td[data-label="Dates"] { white-space: nowrap; }
 .schedule td[data-label="Topic"] { min-width: 260px; }
-.schedule td[data-label="Project"] { min-width: 150px; }
 .schedule th { text-align: left; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
 .schedule td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .schedule tr:last-child td { border-bottom: 0; }

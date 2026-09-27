@@ -28,7 +28,7 @@ This directory is the public course repository: everything students use. Answer 
 | 7 | Thinking (reasoning models) | Thinking | The Audit |
 | 8 | Multimodal | Multimodal | Make It Usable, and Let It See |
 | 9 | Efficiency | Efficiency | Ship It |
-| 10 | Responsible AI | Responsible | Break It, Fix It, Show It |
+| 10 | Project demos | (Responsible AI is read in week 9) | Break It, Fix It, Show It |
 
 ## Project
 
