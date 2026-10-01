@@ -26,14 +26,36 @@ By the end of this lab, you will be able to:
 
 ## Setup
 
-1. Get the course repository onto your machine and open a terminal in its top-level folder (the one with `pyproject.toml` in it). Install the course's Python packages and the book's companion library, `genai`:
+You'll keep all of this quarter's lab work in one folder on your laptop, managed by `uv`, a fast all-in-one tool for Python projects.
+
+1. Install [uv](https://docs.astral.sh/uv/). On macOS or Linux:
    ```bash
-   uv sync
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
+   On Windows (PowerShell):
+   ```bash
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   ```
+   Then close the terminal and open a new one so the `uv` command is found.
+2. Install the Python version the course uses. `uv` downloads and manages it for you, separate from any other Python on your machine:
+   ```bash
+   uv python install 3.13
+   ```
+3. Make a folder for the course and turn it into a `uv` project that uses Python 3.13:
+   ```bash
+   mkdir cs238
+   ```
+   ```bash
+   cd cs238
+   ```
+   ```bash
+   uv init --python 3.13
+   ```
+4. Add the book's companion library, `genai`, to the project:
    ```bash
    uv add git+https://github.com/abuach/illustrating-genai-examples
    ```
-2. Point `genai` at the class Ollama server, `ollama2.cs.wallawalla.edu`. The models all live there, so there's nothing big to download. You only do this once; it sets `OLLAMA_HOST`, the variable Ollama's tools (and `genai`) read to find their server.
+5. Point `genai` at the class Ollama server, `ollama2.cs.wallawalla.edu`. The models all live there, so there's nothing big to download. You only do this once; it sets `OLLAMA_HOST`, the variable Ollama's tools (and `genai`) read to find their server.
 
    On macOS:
    ```bash
@@ -43,20 +65,20 @@ By the end of this lab, you will be able to:
    ```bash
    setx OLLAMA_HOST "http://ollama2.cs.wallawalla.edu:11434"
    ```
-   Then **close the terminal and open a new one** so the setting takes effect. (On Linux, use `~/.bashrc` instead of `~/.zshrc`.)
-3. Check which server `genai` will use:
+   Then **close the terminal, open a new one, and `cd` back into `cs238`** so the setting takes effect. (On Linux, use `~/.bashrc` instead of `~/.zshrc`.)
+6. Check which server `genai` will use:
    ```bash
    uv run python -c "from genai import get_host; print(get_host())"
    ```
    It should print `http://ollama2.cs.wallawalla.edu:11434`.
 
-The class server is shared, so please follow the server guidelines in `resources/ollama-server-guidelines.md` in the course repository.
+The class server is shared, so please follow the [server guidelines](https://github.com/abuach/genai-course-public/blob/main/resources/ollama-server-guidelines.md).
 
 ---
 
 ## How Every Lab Works
 
-Work from the repository's top-level folder, save each script in this week's folder, and run it with `uv run`:
+Every lab works from your `cs238` folder. Save each script in that week's folder, and run it with `uv run`:
 
 ```bash
 mkdir -p labs/week01
