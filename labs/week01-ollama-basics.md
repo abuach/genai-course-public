@@ -28,7 +28,7 @@ By the end of this lab, you will be able to:
 
 You'll keep all of this quarter's lab work in one folder on your laptop, managed by `uv`, a fast all-in-one tool for Python projects.
 
-1. Install [uv](https://docs.astral.sh/uv/). On macOS or Linux:
+1. **Skip this step if you're on a campus computer; `uv` is already installed.** On your own laptop, install [uv](https://docs.astral.sh/uv/). On macOS or Linux:
    ```bash
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
