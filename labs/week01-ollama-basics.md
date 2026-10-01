@@ -57,7 +57,16 @@ You'll keep all of this quarter's lab work in one folder on your laptop, managed
    ```
 5. Point `genai` at the class Ollama server, `ollama2.cs.wallawalla.edu`. The models all live there, so there's nothing big to download. You only do this once; it sets `OLLAMA_HOST`, the variable Ollama's tools (and `genai`) read to find their server.
 
-   On macOS:
+   On a campus computer (Linux), add the setting to your shell's startup file, then load it into the terminal you have open:
+   ```bash
+   echo 'export OLLAMA_HOST=http://ollama2.cs.wallawalla.edu:11434' >> ~/.bashrc
+   ```
+   ```bash
+   source ~/.bashrc
+   ```
+   Every new terminal you open from now on picks the setting up automatically.
+
+   On your own laptop, use the command for your system instead, then **close the terminal, open a new one, and `cd` back into `cs238`**. On macOS:
    ```bash
    echo 'export OLLAMA_HOST=http://ollama2.cs.wallawalla.edu:11434' >> ~/.zshrc
    ```
@@ -65,7 +74,6 @@ You'll keep all of this quarter's lab work in one folder on your laptop, managed
    ```bash
    setx OLLAMA_HOST "http://ollama2.cs.wallawalla.edu:11434"
    ```
-   Then **close the terminal, open a new one, and `cd` back into `cs238`** so the setting takes effect. (On Linux, use `~/.bashrc` instead of `~/.zshrc`.)
 6. Check which server `genai` will use:
    ```bash
    uv run python -c "from genai import get_host; print(get_host())"
