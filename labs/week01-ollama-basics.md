@@ -217,15 +217,27 @@ Compare with the chapter. The first chart should be steeply *peaked* on "Washing
 
 ### 2.2 A Door That Opens Onto Anything
 
-Add this to the bottom of `predict.py` and run it again. It's the chapter's open-ended story prompt, predicted two words in a row:
+Now the chapter's open-ended story prompt, predicted two words in a row. Create `labs/week01/door.py`:
 
 ```python
+from genai import next_token_distribution
+from genai.viz import plot_two_step
+
+MODEL = "llama3.2:latest"
 door = "She opened the door and saw a"
+
+# 1. The forecast for the first word: many reasonable options
 step1 = next_token_distribution(door, model=MODEL, top_k=6)
+
+# 2. Lock in the favorite and forecast the word after it
 top_word = step1[0][0]
 step2 = next_token_distribution(door, model=MODEL, top_k=6,
                                 reply_start=top_word)
 plot_two_step(door, top_word, step1, step2, "labs/week01/door.png")
+```
+
+```bash
+uv run labs/week01/door.py
 ```
 
 The first step should be *spread* across many reasonable words, and the second step should snap shut once the first word is locked in.
@@ -236,7 +248,24 @@ This is the chapter's Exercise 1. Write two unfinished sentences of your own:
 - one where you expect the model to be **very sure** of the next word, and
 - one where you expect **almost anything** could come next.
 
-**Before running anything**, write down which one you expect to be peaked and what you think its top candidates will be. Then add a `plot_next_token` call for each one to the bottom of `predict.py` (give each its own `.png` name) and run it.
+**Before running anything**, write down which one you expect to be peaked and what you think its top candidates will be. Then create `labs/week01/my_prompts.py` and replace the two example prompts with yours:
+
+```python
+from genai import next_token_distribution
+from genai.viz import plot_next_token
+
+MODEL = "llama3.2:latest"
+sure = "Twinkle, twinkle, little"            # ← your "very sure" sentence
+anything = "My favorite thing to eat is"     # ← your "almost anything" sentence
+
+for name, prompt in [("sure", sure), ("anything", anything)]:
+    dist = next_token_distribution(prompt, model=MODEL, top_k=6)
+    plot_next_token(prompt, dist, f"labs/week01/{name}.png")
+```
+
+```bash
+uv run labs/week01/my_prompts.py
+```
 
 **Task 2:** Were your predictions right? Keep your two prompts, your predictions, and the actual top candidates for the lab questions.
 
