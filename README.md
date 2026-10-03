@@ -10,7 +10,7 @@ This directory is the public course repository: everything students use. Answer 
 
 ## Structure
 
-- `labs/` — the weekly labs, released one week at a time during the quarter
+- Labs live in their own repository, [cs238-labs](https://github.com/abuach/cs238-labs), released one week at a time during the quarter
 - `project/` — the quarter-long project: overview, ten weekly milestones, guides, rubric, idea bank, and the two starter tools (a Writer and a Reviewer) students copy and customize (`project/README.md`)
 - `resources/` — standing course resources not tied to a specific week (Ollama server etiquette, setup notes)
 - `util/` — shared `ollama_client.py` helper imported across labs

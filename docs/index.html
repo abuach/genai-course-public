@@ -85,7 +85,7 @@
   <div class="cards">
     <div class="card"><h3>Textbook</h3><p><em>Illustrating Generative AI</em> by Chiké Abuah. The course follows its chapters in order. The book is posted on D2L for enrolled students as weekly readings (listed in the schedule): one chapter a week for weeks 1 to 7, two chapters in weeks 8 and 9, and no reading in week 10; each chapter is a runnable notebook, code and real output side by side. The readings are copyrighted and provided for your own use in this course only; please don't share, post, or distribute them.</p></div>
     <div class="card"><h3>Slides and labs</h3><p>One deck and one lab per week, released as the quarter goes. Labs are written to run on your own Ollama; each ends with reflection questions and a submission checklist.</p></div>
-    <div class="card wide"><h3>Tools</h3><p><a href="https://ollama.com">Ollama</a> for local models (the course uses <code>gemma4</code>, <code>qwen2.5-coder</code>, <code>qwen3</code>, <code>deepseek-r1</code>, <code>qwen3-vl</code>, and <code>nomic-embed-text</code>), <a href="https://docs.astral.sh/uv/">uv</a> for Python, and the course's <a href="https://github.com/abuach/genai-course-public/blob/main/util/ollama_client.py">helper module</a> that every lab imports.</p></div>
+    <div class="card wide"><h3>Tools</h3><p><a href="https://ollama.com">Ollama</a> for local models (the course uses <code>gemma4</code>, <code>qwen2.5-coder</code>, <code>qwen3</code>, <code>deepseek-r1</code>, <code>qwen3-vl</code>, and <code>nomic-embed-text</code>), <a href="https://docs.astral.sh/uv/">uv</a> for Python, and the book's companion library, <a href="https://github.com/abuach/illustrating-genai-examples"><code>genai</code></a>, that every lab imports. Models run on the class server, <code>ollama2.cs.wallawalla.edu</code>.</p></div>
   </div>
 </section>
 
@@ -100,35 +100,35 @@
           <td data-label="Week"><span class="wk">1</span></td>
           <td data-label="Dates">Sep 29 &amp; Oct 1</td>
           <td data-label="Topic"><strong>Introduction</strong><br><span class="blurb">What generative AI is, what a language model does, and the tools we'll use all quarter.</span></td>
-          <td data-label="Materials"><a href="https://github.com/abuach/genai-course-public/blob/main/labs/week01-ollama-basics.md" class="reading">Lab 1</a> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359570" class="reading">Reading: Introduction · D2L</a></td>
+          <td data-label="Materials"><a href="https://github.com/abuach/cs238-labs/tree/main/week01" class="reading">Lab 1</a> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359570" class="reading">Reading: Introduction · D2L</a></td>
           <td data-label="Quiz (Tue)"><span class="muted">none</span></td>
         </tr>
         <tr>
           <td data-label="Week"><span class="wk">2</span></td>
           <td data-label="Dates">Oct 6 &amp; Oct 8</td>
           <td data-label="Topic"><strong>Prompting</strong><br><span class="blurb">Zero-shot, few-shot, system prompts, chain of thought, and structured output.</span></td>
-          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 2 is released in class">Lab 2</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4360067" class="reading">Reading: Prompting · D2L</a></td>
+          <td data-label="Materials"><a href="https://github.com/abuach/cs238-labs/tree/main/week02" class="reading">Lab 2</a> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4360067" class="reading">Reading: Prompting · D2L</a></td>
           <td data-label="Quiz (Tue)"><span class="quiz">Quiz 1</span> <span class="muted">Oct 6</span></td>
         </tr>
         <tr>
           <td data-label="Week"><span class="wk">3</span></td>
           <td data-label="Dates">Oct 13 &amp; Oct 15</td>
-          <td data-label="Topic"><strong>Tokens &amp; Attention</strong><br><span class="blurb">How text becomes numbers, and how attention decides what matters.</span></td>
-          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 3 is released in class">Lab 3</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359586" class="reading">Reading: Tokens · D2L</a></td>
+          <td data-label="Topic"><strong>Tokens &amp; Meaning</strong><br><span class="blurb">How text becomes tokens, and how embeddings turn meaning into distance.</span></td>
+          <td data-label="Materials"><a href="https://github.com/abuach/cs238-labs/tree/main/week03" class="reading">Lab 3</a> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359586" class="reading">Reading: Tokens · D2L</a> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4360068" class="reading">Reading: Semantics · D2L</a></td>
           <td data-label="Quiz (Tue)"><span class="quiz">Quiz 2</span> <span class="muted">Oct 13</span></td>
         </tr>
         <tr>
           <td data-label="Week"><span class="wk">4</span></td>
           <td data-label="Dates">Oct 20 &amp; Oct 22</td>
-          <td data-label="Topic"><strong>Metacoding</strong><br><span class="blurb">Generative AI as a coding collaborator: generate, test, explain, review.</span></td>
+          <td data-label="Topic"><strong>Metacoding</strong><br><span class="blurb">Machines that read and write code: code embeddings, code search, and testing what a model writes.</span></td>
           <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 4 is released in class">Lab 4</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4359583" class="reading">Reading: Metacoding · D2L</a></td>
           <td data-label="Quiz (Tue)"><span class="quiz">Quiz 3</span> <span class="muted">Oct 20</span></td>
         </tr>
         <tr>
           <td data-label="Week"><span class="wk">5</span></td>
           <td data-label="Dates">Oct 27 &amp; Oct 29</td>
-          <td data-label="Topic"><strong>Augmentation</strong><br><span class="blurb">Embeddings, semantic search, and retrieval-augmented generation.</span></td>
-          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 5 is released in class">Lab 5</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4360068" class="reading">Reading: Semantics · D2L</a></td>
+          <td data-label="Topic"><strong>Augmentation</strong><br><span class="blurb">Retrieval-augmented generation: grounding a model in your own documents.</span></td>
+          <td data-label="Materials"><span class="lab-off" aria-disabled="true" title="Lab 5 is released in class">Lab 5</span> · <a href="https://class.wallawalla.edu/d2l/le/lessons/386376/topics/4360069" class="reading">Reading: Augmentation · D2L</a></td>
           <td data-label="Quiz (Tue)"><span class="quiz">Quiz 4</span> <span class="muted">Oct 27</span></td>
         </tr>
         <tr>
@@ -200,7 +200,7 @@
     <div class="bar"><span style="flex:30" class="g1">Labs 30%</span><span style="flex:30" class="g2">Project 30%</span><span style="flex:20" class="g3">Quizzes 20%</span><span style="flex:20" class="g4">Attendance 20%</span></div>
   </div>
   <div class="policy-grid">
-    <div><h3>Labs</h3><p>One per week, done in class and finished on your own, submitted by pushing to your <code>cs238</code> GitHub repository and emailing the link. Reflection questions are answered in your own words, without a model.</p></div>
+    <div><h3>Labs</h3><p>One per week, done in class and finished on your own, kept in the <a href="https://github.com/abuach/cs238-labs">cs238-labs repository</a> (clone it once, <code>git pull</code> each week), and submitted as a text file on D2L. Reflection questions are answered in your own words, without a model.</p></div>
     <div><h3>Quizzes</h3><p>Nine short quizzes on D2L, Tuesday mornings before class, covering the previous week's lecture and lab. Ten auto-graded questions each, one attempt, fifteen minutes.</p></div>
     <div><h3>Project</h3><p>Weekly milestones, live demos during the last week of class, and a report. Everyone on a team receives the same milestone marks; the final grade can be adjusted for individual contribution, which the journal records.</p></div>
     <div><h3>Attendance</h3><p>Class meets twice a week and much of the work happens there. Attendance counts for a fifth of the grade; let me know ahead of time when you have to miss.</p></div>
