@@ -11,32 +11,28 @@ This directory is the public course repository: everything students use. Answer 
 ## Structure
 
 - Labs live in their own repository, [cs238-labs](https://github.com/abuach/cs238-labs), released one week at a time during the quarter
-- `project/` — the quarter-long project: overview, ten weekly milestones, guides, rubric, idea bank, and the two starter tools (a Writer and a Reviewer) students copy and customize (`project/README.md`)
 - `resources/` — standing course resources not tied to a specific week (Ollama server etiquette, setup notes)
 - `util/` — shared `ollama_client.py` helper imported across labs
 
 ## Week-by-week map
 
-| Week | Topic | IGAI chapter | Project milestone |
-|---|---|---|---|
-| 1 | Introduction to Generative AI | Introduction | Pick Your Path |
-| 2 | Prompting | Prompting | Teach It Your Job |
-| 3 | Tokens | Tokens | Gather Your Sources |
-| 4 | Semantics (meaning as distance) | Semantics | Promises and Specialty Models |
-| 5 | Responsible AI | Responsible | Ground It in Your Sources |
-| 6 | Augmentation (RAG) | Augmentation | Give It Hands |
-| 7 | Agentic (tool calling & multi-agent) | Agentic | The Audit |
-| 8 | Thinking & Multimodal | Thinking, Multimodal | Make It Usable, and Let It See |
-| 9 | Efficiency | Efficiency | Ship It |
-| 10 | Project demos | none | Break It, Fix It, Show It |
+| Week | Topic | IGAI chapter |
+|---|---|---|
+| 1 | Introduction to Generative AI | Introduction |
+| 2 | Prompting | Prompting |
+| 3 | Tokens | Tokens |
+| 4 | Semantics (meaning as distance) | Semantics |
+| 5 | Responsible AI | Responsible |
+| 6 | Augmentation (RAG) | Augmentation |
+| 7 | Agentic (tool calling & multi-agent) | Agentic |
+| 8 | Multimodal | Multimodal |
+| 9 | Efficiency | Efficiency |
+| 10 | Thinking (reasoning models) | Thinking |
 
-## Project
-
-Alongside the labs, each team of one to three builds one generative-AI tool for a field of their choosing, one milestone a week, without writing code. Teams pick a path, a Writer (turns something into a piece of writing) or a Reviewer (gives feedback on writing), start from a working demo, and make it their own by editing instructions, examples, sources, settings, and tests. Milestones apply that week's technique to the team's own problem and material; weeks 3, 7, 8, and 10 add what the lectures don't cover (gathering sources, building a test set, watching a real user, red-teaming). The tool runs on local models through Ollama. See [`project/README.md`](project/README.md) for the arc, the grading, and the starter tools.
 
 ## Setup
 
-This project uses [uv](https://docs.astral.sh/uv/) and a local [Ollama](https://ollama.com) install.
+This repository uses [uv](https://docs.astral.sh/uv/) and a local [Ollama](https://ollama.com) install.
 
 ```bash
 uv sync
