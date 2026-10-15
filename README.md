@@ -21,14 +21,14 @@ This directory is the public course repository: everything students use. Answer 
 |---|---|---|---|
 | 1 | Introduction to Generative AI | Introduction | Pick Your Path |
 | 2 | Prompting | Prompting | Teach It Your Job |
-| 3 | Tokens & Attention | Tokens | Gather Your Sources |
-| 4 | Metacoding (GenAI for code) | Metacoding | Promises and Specialty Models |
-| 5 | Augmentation (semantics & RAG) | Semantics, Augmentation | Ground It in Your Sources |
-| 6 | Agentic (tool calling & multi-agent) | Agentic | Give It Hands |
-| 7 | Thinking (reasoning models) | Thinking | The Audit |
-| 8 | Multimodal | Multimodal | Make It Usable, and Let It See |
+| 3 | Tokens | Tokens | Gather Your Sources |
+| 4 | Semantics (meaning as distance) | Semantics | Promises and Specialty Models |
+| 5 | Responsible AI | Responsible | Ground It in Your Sources |
+| 6 | Augmentation (RAG) | Augmentation | Give It Hands |
+| 7 | Agentic (tool calling & multi-agent) | Agentic | The Audit |
+| 8 | Thinking & Multimodal | Thinking, Multimodal | Make It Usable, and Let It See |
 | 9 | Efficiency | Efficiency | Ship It |
-| 10 | Project demos | (Responsible AI is read in week 9) | Break It, Fix It, Show It |
+| 10 | Project demos | none | Break It, Fix It, Show It |
 
 ## Project
 
